@@ -113,7 +113,6 @@ fun SearchApp() {
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.back_button),
                         )
-
                     }
                 } else {
                     Icon(
