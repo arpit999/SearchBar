@@ -15,7 +15,7 @@
     <string name="messages">Messages</string>
     <string name="four_hours_ago">4 hrs ago</string>
 
-    <string name="search_account">Search account</string>
+    <string name="search_user">Search user</string>
     <string name="no_item_found">No item found</string>
-    <string name="no_search_history">No search history</string>
+    <string name="no_search">Type first or last name</string>
 </resources>

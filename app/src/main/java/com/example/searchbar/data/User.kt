@@ -95,10 +95,3 @@ fun generateDummyUser(id: Long): User {
     val altEmail = generateRandomEmail("$firstName.$lastName")
     return User(id, firstName, lastName, email, altEmail)
 }
-
-fun main() {
-    val dummyObjects = (1..100).map { generateDummyUser(it.toLong()) }
-
-    // Print the first dummy object as an example
-    println(dummyObjects.first())
-}
