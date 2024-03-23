@@ -1,81 +1,71 @@
 package com.example.searchbar.data
 
-val allAccounts = listOf(
-        Account(
-            id = 4L,
-            uid = 1L,
+val allUsers = listOf(
+        User(
+            id = 1L,
             firstName = "Tracy",
             lastName = "Alvarez",
             email = "tracealvie@gmail.com",
             altEmail = "tracealvie@gravity.com",
         ),
-        Account(
+        User(
             id = 5L,
-            uid = 2L,
             firstName = "Allison",
             lastName = "Trabucco",
             email = "atrabucco222@gmail.com",
             altEmail = "atrabucco222@work.com",
         ),
-        Account(
+        User(
             id = 6L,
-            uid = 3L,
             firstName = "Ali",
             lastName = "Connors",
             email = "aliconnors@gmail.com",
             altEmail = "aliconnors@android.com",
         ),
-        Account(
+        User(
             id = 7L,
-            uid = 4L,
             firstName = "Alberto",
             lastName = "Williams",
             email = "albertowilliams124@gmail.com",
             altEmail = "albertowilliams124@chromeos.com",
         ),
-        Account(
+        User(
             id = 8L,
-            uid = 5L,
             firstName = "Kim",
             lastName = "Alen",
             email = "alen13@gmail.com",
             altEmail = "alen13@mountainview.gov",
         ),
-        Account(
+        User(
             id = 9L,
-            uid = 6L,
             firstName = "Google",
             lastName = "Express",
             email = "express@google.com",
             altEmail = "express@gmail.com",
         ),
-        Account(
+        User(
             id = 10L,
-            uid = 7L,
             firstName = "Sandra",
             lastName = "Adams",
             email = "sandraadams@gmail.com",
             altEmail = "sandraadams@textera.com",
         ),
-        Account(
+        User(
             id = 11L,
-            uid = 8L,
             firstName = "Trevor",
             lastName = "Hansen",
             email = "trevorhandsen@gmail.com",
             altEmail = "trevorhandsen@express.com",
         ),
-        Account(
+        User(
             id = 12L,
-            uid = 9L,
             firstName = "Sean",
             lastName = "Holt",
             email = "sholt@gmail.com",
             altEmail = "sholt@art.com",
         ),
-        Account(
+        User(
             id = 13L,
-            uid = 10L,
             firstName = "Frank",
             lastName = "Hawkins",
             email = "fhawkank@gmail.com",

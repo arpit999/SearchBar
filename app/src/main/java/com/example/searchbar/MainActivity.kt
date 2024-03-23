@@ -37,8 +37,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.searchbar.data.Account
-import com.example.searchbar.data.allAccounts
+import com.example.searchbar.data.User
+import com.example.searchbar.data.generateDummyUser
 import com.example.searchbar.ui.theme.SearchBarTheme
 
 class MainActivity : ComponentActivity() {
@@ -68,13 +68,22 @@ fun SearchApp() {
 
         var query by remember { mutableStateOf("") }
         var active by remember { mutableStateOf(false) }
-        val allAccount by remember { mutableStateOf(allAccounts) }
-        val searchResults = remember { mutableStateListOf<Account>() }
+//        val userList by remember { mutableStateOf(allUsers) }
+
+        val userList by remember {
+            val dummyUsers = (1..500).map { generateDummyUser(it.toLong()) }
+            mutableStateOf(dummyUsers)
+        }
+        val searchResults = remember { mutableStateListOf<User>() }
 
         LaunchedEffect(query) {
+            searchResults.clear()
             if (query.isNotEmpty()) {
-                val filterAccounts = allAccount.filter {
-                    it.fullName.contains(query)
+                val filterAccounts = userList.filter {
+                    it.firstName.startsWith(prefix = query, ignoreCase = true) || it.lastName.startsWith(
+                        prefix = query,
+                        ignoreCase = true
+                    ) || it.email.startsWith(prefix = query, ignoreCase = true)
                 }
                 searchResults.addAll(filterAccounts)
             }
@@ -87,7 +96,7 @@ fun SearchApp() {
             },
             onSearch = { active = false },
             active = active,
-            onActiveChange = {active = it},
+            onActiveChange = { active = it },
             modifier = Modifier,
             placeholder = { Text(text = stringResource(R.string.search_account)) },
             leadingIcon = {
@@ -118,7 +127,6 @@ fun SearchApp() {
                         modifier = Modifier
                             .padding(end = 16.dp)
                             .clickable {
-                                active = false
                                 query = ""
                             },
                     )
@@ -133,10 +141,10 @@ fun SearchApp() {
                         contentPadding = PaddingValues(16.dp),
                         verticalArrangement = Arrangement.spacedBy(4.dp)
                     ) {
-                        items(searchResults, key = { it.id }){
+                        items(searchResults, key = {it.id}) {
                             ListItem(
                                 headlineContent = { Text(it.fullName) },
-                                supportingContent = { Text(it.email)}
+                                supportingContent = { Text(it.email) }
                             )
                         }
                     }
