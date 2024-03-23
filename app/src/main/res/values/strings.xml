@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SearchBar</string>
+
+    <string name="profile">Profile</string>
+    <string name="search">Search</string>
+    <string name="clear">Clear</string>
+    <string name="reply">Reply</string>
+    <string name="reply_all">Reply All</string>
+
+    <string name="edit">Edit</string>
+    <string name="compose">Compose</string>
+
+    <string name="back_button">Back</string>
+    <string name="more_options_button">More options</string>
+    <string name="messages">Messages</string>
+    <string name="four_hours_ago">4 hrs ago</string>
+
+    <string name="search_account">Search account</string>
+    <string name="no_item_found">No item found</string>
+    <string name="no_search_history">No search history</string>
+</resources>
