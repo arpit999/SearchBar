@@ -23,6 +23,7 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.DockedSearchBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -101,16 +102,18 @@ fun SearchApp() {
             placeholder = { Text(stringResource(R.string.search_user)) },
             leadingIcon = {
                 if (active) {
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                        contentDescription = stringResource(R.string.back_button),
-                        modifier = Modifier
-                            .padding(start = 16.dp)
-                            .clickable {
-                                active = false
-                                query = ""
-                            },
-                    )
+                    IconButton(
+                        modifier = Modifier.padding(start = 16.dp),
+                        onClick = {
+                            active = false
+                            query = ""
+                        }
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = stringResource(R.string.back_button),
+                        )
+                    }
                 } else {
                     Icon(
                         imageVector = Icons.Default.Search,
